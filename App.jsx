@@ -97,7 +97,7 @@ function App() {
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#FF6B81] opacity-[0.08] rounded-full blur-[120px]"></div>
             </div>
             {/* Mobile Frame */}
-            <div className={`w-full max-w-[400px] rounded-[40px] shadow-2xl overflow-hidden border-[8px] border-gray-900 h-[850px] flex flex-col relative transition-all duration-1000 ${step === 'splash' ? 'bg-[#FC6C85]' : 'bg-white'}`}>
+            <div className={`w-full max-w-[400px] rounded-[40px] shadow-2xl overflow-hidden border-[8px] border-gray-900 h-[850px] max-h-[850px] min-h-[850px] flex flex-col relative transition-all duration-1000 ${step === 'splash' ? 'bg-[#FC6C85]' : 'bg-white'}`}>
 
                 {/* Splash Layer (Overlay) */}
                 {(step === 'splash' || isExitingSplash) && (
@@ -127,7 +127,7 @@ function App() {
                 )}
 
                 {/* Step Contents */}
-                <div className={`flex-1 flex flex-col ${['connecting'].includes(step) ? 'justify-center items-center' : ''}`}>
+                <div className={`flex-1 flex flex-col relative overflow-hidden ${['connecting'].includes(step) ? 'justify-center items-center' : ''}`}>
 
                     {step === 'intro' && (
                         <div className="absolute inset-0 bg-white z-[1000] flex flex-col animate-in fade-in duration-700 overflow-hidden">
