@@ -13,6 +13,7 @@ function App() {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [showPurchaseModal, setShowPurchaseModal] = useState(false);
     const [showCashbackInfoModal, setShowCashbackInfoModal] = useState(false);
+    const [showSubmitModal, setShowSubmitModal] = useState(false);
     const videoFeedRef = useRef(null);
     const simulationVideoRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -741,71 +742,71 @@ function App() {
 
                     {step === 'purchase-verification' && (
                         <div className="absolute inset-0 bg-white z-[110] flex flex-col animate-in fade-in duration-300 overflow-y-auto hide-scrollbar">
-                            <div className="p-6 pt-12 pb-32">
-                                <h1 className="text-[28px] font-bold text-[#111111] mb-6">Did you buy it?</h1>
+                            <div className="p-6 pt-8 pb-32">
+                                <h1 className="text-[24px] font-bold text-[#111111] mb-4">Did you buy it?</h1>
 
                                 {/* Product Card */}
-                                <div className="bg-white rounded-3xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 mb-10 flex gap-4 items-center">
-                                    <div className="w-20 h-20 shrink-0 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
+                                <div className="bg-white rounded-2xl p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 mb-6 flex gap-3.5 items-center">
+                                    <div className="w-16 h-16 shrink-0 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
                                         <img src="/product-vita-a.png" className="w-full h-full object-contain p-1" alt="Product" />
                                     </div>
                                     <div className="flex-1">
-                                        <div className="bg-[#111111] text-white text-[10px] font-bold px-2 py-1 rounded-md inline-block mb-1">
+                                        <div className="bg-[#111111] text-white text-[9px] font-bold px-1.5 py-0.5 rounded inline-block mb-1">
                                             15% Cashback
                                         </div>
-                                        <h3 className="text-sm font-medium text-gray-900 leading-tight mb-1">
-                                            celimax The Vita A Retinal Shot Tightening Booster
+                                        <h3 className="text-[13px] font-medium text-gray-900 leading-tight mb-0.5">
+                                            celimax The Vita A Retinal Shot
                                         </h3>
-                                        <p className="text-[#FF6B81] font-bold text-sm">
+                                        <p className="text-[#FF6B81] font-bold text-[13px]">
                                             $2.69 cashback available
                                         </p>
                                     </div>
                                 </div>
 
-                                <h2 className="text-xl font-bold text-[#111111] mb-4">Who inspired you?</h2>
+                                <h2 className="text-lg font-bold text-[#111111] mb-3">Who inspired you?</h2>
 
                                 {/* Search Bar */}
-                                <div className="relative mb-6">
-                                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                <div className="relative mb-4">
+                                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                                     <input
                                         type="text"
                                         placeholder="Search someone who inspired you"
-                                        className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-12 pr-4 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#FF6B81]"
+                                        className="w-full bg-white border border-gray-200 rounded-xl py-3 pl-11 pr-4 text-[13px] placeholder:text-gray-400 focus:outline-none focus:border-[#FF6B81]"
                                     />
                                 </div>
 
                                 {/* Selected Influencer */}
-                                <div className="bg-[#FFF0F3] border border-[#FF6B81]/30 rounded-2xl p-4 flex items-center gap-3 mb-6 relative">
-                                    <div className="w-12 h-12 rounded-full overflow-hidden border border-white shadow-sm">
+                                <div className="bg-[#FFF0F3] border border-[#FF6B81]/30 rounded-2xl p-3.5 flex items-center gap-3 mb-4 relative">
+                                    <div className="w-10 h-10 rounded-full overflow-hidden border border-white shadow-sm">
                                         <img src="/reviewer-1.png" className="w-full h-full object-cover" alt="Influencer" />
                                     </div>
                                     <div>
                                         <p className="font-bold text-[#111111] text-sm">@bcninelka</p>
-                                        <p className="text-gray-500 text-xs">Watched recently</p>
+                                        <p className="text-gray-500 text-[11px]">Watched recently</p>
                                     </div>
-                                    <div className="absolute right-4 w-3 h-3 bg-[#FF6B81] rounded-full"></div>
+                                    <div className="absolute right-4 w-2.5 h-2.5 bg-[#FF6B81] rounded-full"></div>
                                 </div>
 
                                 {/* Influencer Content Grid */}
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-2 gap-3">
                                     {/* Item 1 - Selected */}
-                                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-[3px] border-[#FF6B81] shadow-lg shadow-[#FF6B81]/20">
+                                    <div className="relative aspect-[3/4] rounded-xl overflow-hidden border-[3px] border-[#FF6B81] shadow-lg shadow-[#FF6B81]/20">
                                         <img src="/reviewer-1.png" className="w-full h-full object-cover" alt="Content" />
                                         <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/40"></div>
-                                        <div className="absolute bottom-3 left-3 flex items-center gap-1 text-white font-bold text-sm">
-                                            <Play className="w-3 h-3 fill-white" /> 1.9M
+                                        <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1 text-white font-bold text-[11px]">
+                                            <Play className="w-2.5 h-2.5 fill-white" /> 1.9M
                                         </div>
-                                        <div className="absolute top-3 left-3 w-8 h-8 rounded-full border border-white/50 overflow-hidden">
+                                        <div className="absolute top-2.5 left-2.5 w-7 h-7 rounded-full border border-white/50 overflow-hidden">
                                             <img src="/reviewer-1.png" className="w-full h-full object-cover" />
                                         </div>
                                     </div>
 
                                     {/* Item 2 - Other */}
-                                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100">
+                                    <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-gray-100">
                                         <img src="/reviewer-2.png" className="w-full h-full object-cover opacity-90" alt="Content" />
                                         <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/40"></div>
-                                        <div className="absolute bottom-3 left-3 flex items-center gap-1 text-white font-bold text-sm">
-                                            <Play className="w-3 h-3 fill-white" /> 1M
+                                        <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1 text-white font-bold text-[11px]">
+                                            <Play className="w-2.5 h-2.5 fill-white" /> 1M
                                         </div>
                                     </div>
                                 </div>
@@ -901,91 +902,142 @@ function App() {
                     {step === 'profile' && (
                         <div className="absolute inset-0 bg-[#2C3E50] z-50 flex flex-col animate-in fade-in duration-300">
                             {/* Header Section */}
-                            <div className="px-6 pt-12 pb-6">
-                                <div className="flex items-center justify-between mb-6">
+                            <div className="px-6 pt-8 pb-4">
+                                <div className="flex items-center justify-between mb-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
+                                        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/20">
                                             <img src="/reviewer-1.png" className="w-full h-full object-cover" />
                                         </div>
                                         <div>
-                                            <p className="text-white font-bold text-base">@skincare_sarah</p>
-                                            <p className="text-[#FF6B81] text-xs font-bold">tier 3</p>
+                                            <p className="text-white font-bold text-sm">@skincare_sarah</p>
+                                            <p className="text-[#FF6B81] text-[10px] font-bold">tier 3</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                                            <ExternalLink className="w-4 h-4 text-white" />
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                                            <ExternalLink className="w-3.5 h-3.5 text-white" />
                                         </div>
-                                        <div className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                                            <Lock className="w-4 h-4 text-white" />
+                                        <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                                            <Lock className="w-3.5 h-3.5 text-white" />
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Cashback Card */}
-                                <div className="bg-[#1a252f] rounded-3xl p-4 mb-4 relative overflow-hidden">
-                                    <div className="absolute top-4 right-4">
-                                        <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                                            <ArrowLeftRight className="w-4 h-4 text-white rotate-90" />
+                                <div className="bg-[#1a252f] rounded-2xl p-3.5 mb-2 relative overflow-hidden">
+                                    <div className="absolute top-3 right-3">
+                                        <div className="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                            <ArrowLeftRight className="w-3.5 h-3.5 text-white rotate-90" />
                                         </div>
                                     </div>
-                                    <p className="text-white/60 text-sm mb-2">Cashback amount</p>
-                                    <h2 className="text-white text-[34px] font-bold leading-none">$2.69</h2>
+                                    <p className="text-white/60 text-xs mb-1">Cashback amount</p>
+                                    <h2 className="text-white text-[28px] font-bold leading-none">$2.69</h2>
                                 </div>
 
                                 {/* Earning Card */}
-                                <div className="bg-[#0f1419] rounded-3xl p-4 mb-4 relative overflow-hidden">
-                                    <div className="absolute top-4 right-4">
-                                        <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                                            <ArrowLeftRight className="w-4 h-4 text-white rotate-90" />
+                                <div className="bg-[#0f1419] rounded-2xl p-3.5 mb-2 relative overflow-hidden">
+                                    <div className="absolute top-3 right-3">
+                                        <div className="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                            <ArrowLeftRight className="w-3.5 h-3.5 text-white rotate-90" />
                                         </div>
                                     </div>
-                                    <p className="text-white/60 text-sm mb-2">Earning from sharing Experience</p>
-                                    <h2 className="text-white text-[34px] font-bold leading-none">$68.97</h2>
+                                    <p className="text-white/60 text-xs mb-1">Earning from sharing Experience</p>
+                                    <h2 className="text-white text-[28px] font-bold leading-none">$68.97</h2>
                                 </div>
 
-                                {/* Total & Claim */}
-                                <div className="flex gap-3">
-                                    <div className="flex-1 bg-[#3d4f5f] rounded-2xl p-3">
-                                        <p className="text-white/60 text-xs mb-1">Total</p>
-                                        <p className="text-white text-lg font-bold">$71.66</p>
-                                    </div>
-                                    <button className="flex-1 bg-[#FF6B81] rounded-2xl p-3 flex flex-col items-center justify-center shadow-lg shadow-[#FF6B81]/20 active:scale-[0.98] transition-transform">
-                                        <p className="text-white text-xs font-medium mb-0.5">Claim</p>
-                                        <p className="text-white text-lg font-bold">Available</p>
-                                    </button>
-                                </div>
                             </div>
 
                             {/* Available Action Section */}
-                            <div className="flex-1 bg-white rounded-t-[32px] px-6 pt-6 pb-24 overflow-y-auto hide-scrollbar">
-                                <h3 className="text-[#111111] font-bold text-xl mb-4">Available action</h3>
+                            <div className="flex-1 bg-white rounded-t-[24px] px-6 pt-5 pb-24 overflow-y-auto hide-scrollbar">
+                                <h3 className="text-[#111111] font-bold text-lg mb-3">Sharing Experience</h3>
 
                                 {/* Action Card */}
-                                <div className="border-2 border-[#FF6B81] rounded-3xl p-6 bg-white">
-                                    <div className="flex items-start justify-between mb-4">
-                                        <h4 className="text-[#111111] font-bold text-lg">Celimax Retinal Shot</h4>
-                                        <span className="bg-[#FFE5EA] text-[#FF6B81] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Action Required</span>
+                                <div className="border-2 border-[#FF6B81] rounded-2xl p-4 bg-white">
+                                    <div className="flex items-start justify-between mb-3">
+                                        <h4 className="text-[#111111] font-bold text-base">Celimax Retinal Shot</h4>
+                                        <span className="bg-[#FFE5EA] text-[#FF6B81] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Action Required</span>
                                     </div>
 
-                                    <p className="text-gray-600 text-sm mb-1">
-                                        Upload your TikTok review to unlock the
-                                    </p>
-                                    <p className="text-gray-600 text-sm mb-6">
-                                        remaining <span className="font-bold text-[#111111]">$9.88</span> (55% off effect).
+                                    <p className="text-gray-600 text-[13px] mb-4">
+                                        Upload your TikTok review to unlock the remaining <span className="font-bold text-[#111111]">$9.88</span> (55% off effect).
                                     </p>
 
                                     <input
                                         type="text"
                                         placeholder="Paste TikTok Link Here"
-                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3.5 px-4 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#FF6B81] mb-4"
+                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#FF6B81] mb-3"
                                     />
 
-                                    <button className="w-full bg-[#FF6B81] text-white font-bold py-4 rounded-xl text-base shadow-lg shadow-[#FF6B81]/20 active:scale-[0.98] transition-transform">
-                                        Submit Link
-                                    </button>
+                                    <div className="relative">
+                                        <div className="absolute -top-3 -right-1 z-20 pointer-events-none">
+                                            <div className="bg-[#FF6B81] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-lg animate-bounce">
+                                                Click
+                                            </div>
+                                        </div>
+                                        <button
+                                            onClick={() => setShowSubmitModal(true)}
+                                            className="w-full bg-[#FF6B81] text-white font-bold py-4 rounded-xl text-base shadow-lg shadow-[#FF6B81]/20 active:scale-[0.98] transition-transform animate-pulse-ring border-2 border-[#FF6B81]"
+                                        >
+                                            Submit Link
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
+
+                            {/* Submit Link Detail Modal */}
+                            {showSubmitModal && (
+                                <div className="fixed inset-0 z-[200] flex items-center justify-center p-6 animate-in fade-in duration-300">
+                                    <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" onClick={() => setShowSubmitModal(false)}></div>
+                                    <div className="relative bg-white w-full max-w-sm rounded-[32px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+                                        <button
+                                            onClick={() => setShowSubmitModal(false)}
+                                            className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors z-10"
+                                        >
+                                            <X className="w-5 h-5" />
+                                        </button>
+
+                                        <div className="p-8">
+                                            <div className="w-14 h-14 bg-subak-red/10 rounded-2xl flex items-center justify-center mb-6">
+                                                <TrendingUp className="w-7 h-7 text-subak-red" />
+                                            </div>
+
+                                            <h3 className="text-xl font-bold text-[#111111] mb-5 leading-tight">
+                                                리뷰 제출 및 리워드 플로우 안내
+                                            </h3>
+
+                                            <div className="space-y-5">
+                                                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                                    <p className="text-[13px] text-gray-600 leading-relaxed">
+                                                        크리에이터가 제품을 수령하고 최소 가이드라인(브랜드 이미지 저해 방지 & 퀄리티 확보)에 따라 자율적인 리뷰 콘텐츠를 제작 및 업로드했을 시, <span className="text-subak-red font-bold">제품가의 30~60% 추가 페이백</span> 혜택을 수령할 수 있습니다. (브랜드 설정 기준)
+                                                    </p>
+                                                </div>
+
+                                                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                                    <p className="text-[13px] text-gray-600 leading-relaxed">
+                                                        이렇게 업로드된 콘텐츠는 <span className="font-bold text-[#111111]">틱톡-수박 채널</span>에 노출되며, 해당 콘텐츠를 통해 타 사용자가 구매할 경우 크리에이터에게 <span className="text-subak-red font-bold">건당 5% 내외의 추가 리워드</span>가 지급됩니다.
+                                                    </p>
+                                                </div>
+
+                                                <div className="pt-2">
+                                                    <p className="text-[13px] text-gray-400 italic leading-relaxed">
+                                                        "브랜드는 이 플로우를 통해 구매 전환에 최적화된 진정성과 스토리가 존재하는 콘텐츠를 <span className="text-[#111111] font-bold">No-risk</span>로 수급할 수 있습니다."
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <button
+                                                onClick={() => {
+                                                    setShowSubmitModal(false);
+                                                    setStep('intro');
+                                                }}
+                                                className="w-full bg-[#111111] text-white font-bold py-4 rounded-xl mt-8 active:scale-[0.98] transition-all"
+                                            >
+                                                DEMO 돌아가기
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
 
                             {/* Bottom Navigation Bar */}
                             <nav className="bg-white border-t border-gray-100 h-[80px] px-8 shadow-[0_-8px_30px_rgb(0,0,0,0.06)] flex items-center justify-between shrink-0 z-50">
